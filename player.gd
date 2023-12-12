@@ -1,18 +1,18 @@
 extends CharacterBody3D
 
 
-@export var SPEED = 11.0
+@export var SPEED = 16.0
 #@export var fall_acceleration = 75
 @onready var animation_player = $Node3D_pivot_visuals/gobot/AnimationPlayer
 
 var target_velocity = Vector3.ZERO
 
 
-const JUMP_VELOCITY = 4.5
+const JUMP_VELOCITY = 9.5
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
-#var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
-var gravity = 0
+var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
+#var gravity = 0
 
 
 func _physics_process(delta):
@@ -32,8 +32,6 @@ func _physics_process(delta):
 		#walking animation
 		if animation_player.current_animation != "Walk":
 			animation_player.play("Walk")
-		if animation_player.current_animation != "Run":
-			animation_player.play("Run")	
 			
 		velocity.x = direction.x * SPEED
 		velocity.z = direction.z * SPEED

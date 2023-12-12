@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://clqj3yjfp2mwg"]
+
+[ext_resource type="PackedScene" uid="uid://dyge2ovll575q" path="res://Environment/Nature-Kit/Models/cliff_steps_rock.glb" id="1_70vmi"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_b0f7b"]
+
+[node name="cliff_steps_rock" instance=ExtResource("1_70vmi")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.439216, 0)
+shape = SubResource("BoxShape3D_b0f7b")

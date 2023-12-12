@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://bcjqlo4pfu4re"]
+
+[ext_resource type="PackedScene" uid="uid://dbqoj8oam1dsg" path="res://3D-Characters/beetle_bot/model/beetle_bot_fused.glb" id="1_vn53u"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_oakr6"]
+radius = 0.523715
+height = 1.30003
+
+[node name="monster" type="CharacterBody3D"]
+
+[node name="Pivot" type="Node3D" parent="."]
+
+[node name="beetle_bot_fused" parent="Pivot" instance=ExtResource("1_vn53u")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.381038, -0.924559, 0, 0.924559, 0.381038, 0, 0.244599, 0.191588)
+shape = SubResource("CapsuleShape3D_oakr6")
