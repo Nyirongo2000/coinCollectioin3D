@@ -1,0 +1,140 @@
+[gd_scene load_steps=13 format=3 uid="uid://ck05c4aum1486"]
+
+[ext_resource type="PackedScene" uid="uid://dsgo4dshnut54" path="res://player.tscn" id="1_bds27"]
+[ext_resource type="PackedScene" uid="uid://dyge2ovll575q" path="res://Environment/Nature-Kit/Models/cliff_steps_rock.glb" id="2_u2qf6"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5e7ov"]
+size = Vector3(70, 2, 100)
+
+[sub_resource type="BoxMesh" id="BoxMesh_gn2jc"]
+size = Vector3(70, 1, 110)
+
+[sub_resource type="BoxMesh" id="BoxMesh_sgmgq"]
+size = Vector3(20, 10, 2)
+
+[sub_resource type="BoxMesh" id="BoxMesh_qwxwc"]
+size = Vector3(2, 20, 40)
+
+[sub_resource type="BoxMesh" id="BoxMesh_l7i6q"]
+size = Vector3(6, 6, 26)
+
+[sub_resource type="BoxMesh" id="BoxMesh_dhhlo"]
+size = Vector3(30, 2, 30)
+
+[sub_resource type="BoxMesh" id="BoxMesh_d1apf"]
+size = Vector3(20, 5, 10)
+
+[sub_resource type="BoxMesh" id="BoxMesh_v4s8y"]
+size = Vector3(2, 5, 30)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_41vcb"]
+top_radius = 8.421
+bottom_radius = 8.421
+height = 1.988
+
+[sub_resource type="BoxMesh" id="BoxMesh_6oixx"]
+size = Vector3(5, 30, 5)
+
+[node name="Main" type="Node"]
+
+[node name="Ground" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground"]
+shape = SubResource("BoxShape3D_5e7ov")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ground"]
+mesh = SubResource("BoxMesh_gn2jc")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Ground"]
+transform = Transform3D(0.136629, -0.990605, 0.005854, 0.989442, 0.136752, 0.0479885, -0.0483382, -0.000764419, 0.998831, -35.0581, -3.57643, 0.759972)
+mesh = SubResource("BoxMesh_gn2jc")
+
+[node name="MeshInstance3D3 steps" type="MeshInstance3D" parent="Ground"]
+transform = Transform3D(0.999672, -0.0254283, 0.00292833, -0.00185338, 0.0421941, 0.999108, -0.0255291, -0.998786, 0.0421331, -23.8039, 0.355609, 41.8896)
+visible = false
+mesh = SubResource("BoxMesh_sgmgq")
+
+[node name="MeshInstance3D4 steps1" type="MeshInstance3D" parent="Ground"]
+transform = Transform3D(0.999672, -0.0254283, 0.00292833, -0.00185338, 0.0421941, 0.999108, -0.0255291, -0.998786, 0.0421331, -23.8171, 2.23827, 39.4154)
+visible = false
+mesh = SubResource("BoxMesh_sgmgq")
+
+[node name="MeshInstance3D5 steps2" type="MeshInstance3D" parent="Ground"]
+transform = Transform3D(0.999672, -0.0254283, 0.00292833, -0.00185338, 0.0421941, 0.999108, -0.0255291, -0.998786, 0.0421331, -23.8615, 3.64195, 37.4547)
+visible = false
+mesh = SubResource("BoxMesh_sgmgq")
+
+[node name="MeshInstance3D6 steps3" type="MeshInstance3D" parent="Ground"]
+transform = Transform3D(0.999672, -0.0254283, 0.00292833, -0.00185338, 0.0421941, 0.999108, -0.0255291, -0.998786, 0.0421331, -23.8615, 5.42812, 35.5214)
+visible = false
+mesh = SubResource("BoxMesh_sgmgq")
+
+[node name="MeshInstance3D3 steps2" type="MeshInstance3D" parent="Ground"]
+transform = Transform3D(-0.999008, -0.0445319, 2.74428e-05, -0.00185338, 0.0421941, 0.999108, -0.0444934, 0.998117, -0.0422347, -23.6357, 0.355609, 26.0764)
+visible = false
+mesh = SubResource("BoxMesh_sgmgq")
+
+[node name="MeshInstance3D4 steps2" type="MeshInstance3D" parent="Ground"]
+transform = Transform3D(-0.999008, -0.0445319, 2.74428e-05, -0.00185338, 0.0421941, 0.999108, -0.0444934, 0.998117, -0.0422347, -23.7957, 2.23827, 28.5454)
+visible = false
+mesh = SubResource("BoxMesh_sgmgq")
+
+[node name="MeshInstance3D5 steps3" type="MeshInstance3D" parent="Ground"]
+transform = Transform3D(-0.999008, -0.0445319, 2.74428e-05, -0.00185338, 0.0421941, 0.999108, -0.0444934, 0.998117, -0.0422347, -23.8886, 3.64195, 30.5044)
+visible = false
+mesh = SubResource("BoxMesh_sgmgq")
+
+[node name="MeshInstance3D6 steps4" type="MeshInstance3D" parent="Ground"]
+transform = Transform3D(-0.999008, -0.0445319, 2.74428e-05, -0.00185338, 0.0421941, 0.999108, -0.0444934, 0.998117, -0.0422347, -24.0239, 4.42812, 32.433)
+visible = false
+mesh = SubResource("BoxMesh_sgmgq")
+
+[node name="MeshInstance3D3 sleps block" type="MeshInstance3D" parent="Ground"]
+transform = Transform3D(0.99697, -0.0773378, 0.00842503, -0.0771076, -0.996712, -0.0248848, 0.0103219, 0.0241598, -0.999655, -12.0667, 9.16203, 38.6959)
+mesh = SubResource("BoxMesh_qwxwc")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Ground"]
+transform = Transform3D(0.999545, 0.0301722, 0, -0.0301722, 0.999545, 0, 0, 0, 1, -15.6077, 2.22009, 8.70126)
+mesh = SubResource("BoxMesh_l7i6q")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="Ground"]
+transform = Transform3D(-0.0255547, -0.000771392, -0.999673, -0.0301722, 0.999545, 0, 0.999218, 0.0301623, -0.0255663, -4.83431, 2.28829, -6.64781)
+mesh = SubResource("BoxMesh_l7i6q")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="Ground"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.6953, 1.83858, -37.1658)
+mesh = SubResource("BoxMesh_dhhlo")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="Ground"]
+transform = Transform3D(0.981614, 0.190878, 0, -0.190878, 0.981614, 0, 0, 0, 1, 11.8651, -1.66864, -27.6887)
+mesh = SubResource("BoxMesh_d1apf")
+
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="Ground"]
+transform = Transform3D(0.0296938, 0.00359387, -0.999553, -0.146883, 0.989154, -0.00080697, 0.988708, 0.146841, 0.0298996, -24.2219, -1.58893, -16.1117)
+mesh = SubResource("BoxMesh_d1apf")
+
+[node name="MeshInstance3D8" type="MeshInstance3D" parent="Ground"]
+transform = Transform3D(0.997288, 0.0736037, 0, -0.0736037, 0.997288, 0, 0, 0, 1, 5.47421, 1.99852, 11.5265)
+mesh = SubResource("BoxMesh_v4s8y")
+
+[node name="MeshInstance3D9 carot place" type="MeshInstance3D" parent="Ground"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.9519, 0.406059, -9.81989)
+mesh = SubResource("CylinderMesh_41vcb")
+
+[node name="MeshInstance3D9" type="MeshInstance3D" parent="Ground"]
+transform = Transform3D(0.759476, 0, 0.650536, 0, 1, 0, -0.650536, 0, 0.759476, 20.6914, 14.2966, 29.9164)
+mesh = SubResource("BoxMesh_6oixx")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.425211, 0.905094, 0, -0.905094, 0.425211, 0, 50.8361, 0.118835)
+shadow_enabled = true
+
+[node name="Player" parent="." instance=ExtResource("1_bds27")]
+transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, -25.2074, -0.662124, 52.468)
+
+[node name="cliff_steps_rock steps" parent="." instance=ExtResource("2_u2qf6")]
+transform = Transform3D(-19.9558, 0, -0.66448, 0, 6, 0, 1.32896, 0, -9.9779, -23.7363, -0.840129, 45.833)
+
+[node name="cliff_steps_rock2 steps" parent="." instance=ExtResource("2_u2qf6")]
+transform = Transform3D(19.9878, 0, -0.348995, 0, 6, 0, 0.69799, 0, 9.99391, -23.7363, -0.820492, 36.4121)
