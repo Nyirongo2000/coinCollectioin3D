@@ -1,6 +1,7 @@
-[gd_scene load_steps=30 format=3 uid="uid://ck05c4aum1486"]
+[gd_scene load_steps=31 format=3 uid="uid://ck05c4aum1486"]
 
 [ext_resource type="PackedScene" uid="uid://dsgo4dshnut54" path="res://player.tscn" id="1_bds27"]
+[ext_resource type="PackedScene" uid="uid://d025jbhpltpi7" path="res://goldcoin.tscn" id="3_265ye"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_5e7ov"]
 size = Vector3(70, 2, 100)
@@ -206,6 +207,7 @@ shape = SubResource("BoxShape3D_w16f1")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="Ground"]
 transform = Transform3D(0.136629, -0.990605, 0.005854, 0.989442, 0.136752, 0.0479885, -0.0483382, -0.000764419, 0.998831, -35.0581, -3.57643, 0.759972)
+visible = false
 mesh = SubResource("BoxMesh_gn2jc")
 
 [node name="MeshInstance3D3 sleps block" type="MeshInstance3D" parent="Ground"]
@@ -334,4 +336,22 @@ transform = Transform3D(1, 0, 0, 0, 0.425211, 0.905094, 0, -0.905094, 0.425211, 
 shadow_enabled = true
 
 [node name="Player" parent="." instance=ExtResource("1_bds27")]
-transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, -25.2074, -0.662124, 52.468)
+transform = Transform3D(7, 0, 0, 0, 7, 0, 0, 0, 7, -25.2074, -0.662124, 52.468)
+
+[node name="goldcoin" parent="." instance=ExtResource("3_265ye")]
+transform = Transform3D(15, 0, 0, 0, 15, 0, 0, 0, 15, -24.5064, 0.396067, 15.9051)
+
+[node name="goldcoin2" parent="." instance=ExtResource("3_265ye")]
+transform = Transform3D(15, 0, 0, 0, 15, 0, 0, 0, 15, -24.5064, 2.98263, -40.0598)
+
+[node name="goldcoin3" parent="." instance=ExtResource("3_265ye")]
+transform = Transform3D(15, 0, 0, 0, 15, 0, 0, 0, 15, -3.53198, 2.98263, 8.19344)
+
+[node name="goldcoin4" parent="." instance=ExtResource("3_265ye")]
+transform = Transform3D(15, 0, 0, 0, 15, 0, 0, 0, 15, 25.7745, 0.410026, 50.8486)
+
+[node name="goldcoin5" parent="." instance=ExtResource("3_265ye")]
+transform = Transform3D(15, 0, 0, 0, 15, 0, 0, 0, 15, 24.5528, 0.410026, -12.2428)
+
+[node name="goldcoin6" parent="." instance=ExtResource("3_265ye")]
+transform = Transform3D(15, 0, 0, 0, 15, 0, 0, 0, 15, 24.5528, 0.410026, -50.7098)
