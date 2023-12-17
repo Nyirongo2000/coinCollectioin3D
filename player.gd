@@ -11,6 +11,7 @@ extends CharacterBody3D
 @export var sensing_horizontal_mvmet =0.4
 @export var sensing_vetical_mvmet =0.4
 var target_velocity = Vector3.ZERO
+@onready var node_3d_pivot_visuals = $Node3D_pivot_visuals
 
 
 const JUMP_VELOCITY = 9.5
@@ -27,6 +28,7 @@ func _ready():
 func _input(event):
 	if event is InputEventMouseMotion:
 		rotate_y(deg_to_rad(-event.relative.x * sensing_horizontal_mvmet))
+		#node_3d_pivot_visuals.rotate_y(deg_to_rad(event.relative.x * sensing_horizontal_mvmet))
 		camera_mount_node_3d.rotate_x(deg_to_rad(-event.relative.y * sensing_vetical_mvmet))
 
 func _physics_process(delta):
@@ -37,7 +39,7 @@ func _physics_process(delta):
 	# Handle Jump.
 	if Input.is_action_just_pressed("move_jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
-
+	
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var input_dir = Input.get_vector("move_left", "move_right", "move_up", "move_down")
@@ -46,7 +48,9 @@ func _physics_process(delta):
 		#walking animation
 		if animation_player.current_animation != "Walk":
 			animation_player.play("Walk")
-			
+		#to rotate the pivot in walking direction respectivly 
+		#negate direction fix
+		node_3d_pivot_visuals.look_at(position - direction, Vector3.UP)
 		velocity.x = direction.x * SPEED
 		velocity.z = direction.z * SPEED
 	else:
