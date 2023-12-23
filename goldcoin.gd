@@ -11,5 +11,5 @@ func _process(delta):
 	rotate_y(deg_to_rad(ROTATION_SPEED))
 	
 func _on_body_entered(body):
-	pass
-	#queue_free()
+	print("Body entered!")
+	queue_free()

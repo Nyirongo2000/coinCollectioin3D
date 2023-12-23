@@ -72,6 +72,8 @@ height = 0.13914
 radius = 0.179122
 
 [node name="goldcoin" type="Area3D"]
+collision_layer = 0
+monitorable = false
 script = ExtResource("1_r788b")
 
 [node name="coinGold" type="Node3D" parent="."]

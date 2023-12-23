@@ -2027,6 +2027,7 @@ _data = {
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_m5vrj"]
 
 [node name="Player" type="CharacterBody3D"]
+collision_mask = 15
 script = ExtResource("1_66bp8")
 sensing_horizontal_mvmet = 0.3
 
