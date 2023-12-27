@@ -1,11 +1,11 @@
-[gd_scene load_steps=86 format=3 uid="uid://ck05c4aum1486"]
+[gd_scene load_steps=85 format=3 uid="uid://ck05c4aum1486"]
 
 [ext_resource type="PackedScene" uid="uid://duakk3s2n4txd" path="res://Environment/Platformer-Kit/Models/doorLargeOpen.glb" id="1_6tgmg"]
 [ext_resource type="PackedScene" uid="uid://dsgo4dshnut54" path="res://player.tscn" id="1_bds27"]
 [ext_resource type="PackedScene" uid="uid://bb58kj25dl4dg" path="res://Environment/Platformer-Kit/Models/doorLargeClosed.glb" id="2_36uw8"]
 [ext_resource type="PackedScene" uid="uid://d025jbhpltpi7" path="res://goldcoin.tscn" id="3_265ye"]
 [ext_resource type="Script" path="res://Label.gd" id="3_bq43h"]
-[ext_resource type="Texture2D" uid="uid://dkajt1yya1mjh" path="res://UI/KennyUIPack/UI Textures/grey_arrowUpWhite.png" id="4_0ffjn"]
+[ext_resource type="PackedScene" uid="uid://djh57b1ik4xva" path="res://directions.tscn" id="6_geist"]
 [ext_resource type="PackedScene" uid="uid://byldn1bgeasoe" path="res://Environment/Nature-Kit/Models/platform_grass.glb" id="7_mkt3q"]
 [ext_resource type="PackedScene" uid="uid://dsgey5rr5r4wh" path="res://Environment/Platformer-Kit/Models/hedge.glb" id="7_nmfco"]
 [ext_resource type="PackedScene" uid="uid://ch3ilxfm54ob6" path="res://beetle.tscn" id="9_hdpv7"]
@@ -40,9 +40,6 @@ size = Vector3(70, 1, 110)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_w16f1"]
 size = Vector3(70, 1, 110)
-
-[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_cvvm7"]
-data = PackedVector3Array(-35, 0.5, 55, 35, 0.5, 55, -35, -0.5, 55, 35, 0.5, 55, 35, -0.5, 55, -35, -0.5, 55, 35, 0.5, -55, -35, 0.5, -55, 35, -0.5, -55, -35, 0.5, -55, -35, -0.5, -55, 35, -0.5, -55, 35, 0.5, 55, 35, 0.5, -55, 35, -0.5, 55, 35, 0.5, -55, 35, -0.5, -55, 35, -0.5, 55, -35, 0.5, -55, -35, 0.5, 55, -35, -0.5, -55, -35, 0.5, 55, -35, -0.5, 55, -35, -0.5, -55, 35, 0.5, 55, -35, 0.5, 55, 35, 0.5, -55, -35, 0.5, 55, -35, 0.5, -55, 35, 0.5, -55, -35, -0.5, 55, 35, -0.5, 55, -35, -0.5, -55, 35, -0.5, 55, 35, -0.5, -55, -35, -0.5, -55)
 
 [sub_resource type="BoxMesh" id="BoxMesh_qwxwc"]
 size = Vector3(2, 20, 40)
@@ -802,14 +799,9 @@ mesh = SubResource("BoxMesh_gn2jc")
 shape = SubResource("BoxShape3D_w16f1")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="Ground"]
-transform = Transform3D(0.136629, -0.990605, 0.005854, 0.989442, 0.136752, 0.0479885, -0.0483382, -0.000764419, 0.998831, -36.9089, -3.57643, 0.759972)
+transform = Transform3D(0.136629, -0.990605, 0.005854, 0.989442, 0.136752, 0.0479885, -0.0483382, -0.000764419, 0.998831, -35.0581, -3.57643, 0.759972)
 visible = false
 mesh = SubResource("BoxMesh_gn2jc")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Ground/MeshInstance3D2"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground/MeshInstance3D2/StaticBody3D"]
-shape = SubResource("ConcavePolygonShape3D_cvvm7")
 
 [node name="MeshInstance3D3 sleps block" type="MeshInstance3D" parent="Ground"]
 transform = Transform3D(0.99697, -0.0773378, 0.00842503, -0.0771076, -0.996712, -0.0248848, 0.0103219, 0.0241598, -0.999655, -12.6698, 9.16203, 38.6959)
@@ -925,29 +917,26 @@ shape = SubResource("ConcavePolygonShape3D_om761")
 transform = Transform3D(1, 0, 0, 0, 0.425211, 0.905094, 0, -0.905094, 0.425211, 0, 50.8361, 0.118835)
 shadow_enabled = true
 
-[node name="goldcoin" parent="." instance=ExtResource("3_265ye")]
-transform = Transform3D(12, 0, 0, 0, 12, 0, 0, 0, 12, -24.5064, 3.92378, 25.1103)
-
-[node name="goldcoin2" parent="." instance=ExtResource("3_265ye")]
-transform = Transform3D(12, 0, 0, 0, 12, 0, 0, 0, 12, -15.4466, 2.98263, -40.0598)
-
-[node name="goldcoin3" parent="." instance=ExtResource("3_265ye")]
-transform = Transform3D(12, 0, 0, 0, 12, 0, 0, 0, 12, 0.438097, 2.98263, 13.7062)
-
-[node name="goldcoin4" parent="." instance=ExtResource("3_265ye")]
-transform = Transform3D(12, 0, 0, 0, 12, 0, 0, 0, 12, 28.4561, 2.96643, 49.2153)
-
 [node name="goldcoin7" parent="." instance=ExtResource("3_265ye")]
 transform = Transform3D(12, 0, 0, 0, 12, 0, 0, 0, 12, -6.4414, 6.76036, 47.1517)
 
+[node name="goldcoin9" parent="." instance=ExtResource("3_265ye")]
+transform = Transform3D(12, 0, 0, 0, 12, 0, 0, 0, 12, -24.2737, 3.49, 28.426)
+
+[node name="goldcoin10" parent="." instance=ExtResource("3_265ye")]
+transform = Transform3D(12, 0, 0, 0, 12, 0, 0, 0, 12, -19.3426, 4.18848, -44.4825)
+
+[node name="goldcoin11" parent="." instance=ExtResource("3_265ye")]
+transform = Transform3D(12, 0, 0, 0, 12, 0, 0, 0, 12, 18.8111, -0.913224, -44.4825)
+
+[node name="goldcoin12" parent="." instance=ExtResource("3_265ye")]
+transform = Transform3D(12, 0, 0, 0, 12, 0, 0, 0, 12, 22.2496, 3.10076, -12.7278)
+
+[node name="goldcoin13" parent="." instance=ExtResource("3_265ye")]
+transform = Transform3D(12, 0, 0, 0, 12, 0, 0, 0, 12, 0.0516834, 6.76036, 24.345)
+
 [node name="goldcoin8" parent="." instance=ExtResource("3_265ye")]
 transform = Transform3D(12, 0, 0, 0, 12, 0, 0, 0, 12, -6.4414, 6.76036, 47.1517)
-
-[node name="goldcoin5" parent="." instance=ExtResource("3_265ye")]
-transform = Transform3D(12, 0, 0, 0, 12, 0, 0, 0, 12, 24.5528, 0.410026, -15.9198)
-
-[node name="goldcoin6" parent="." instance=ExtResource("3_265ye")]
-transform = Transform3D(12, 0, 0, 0, 12, 0, 0, 0, 12, 23.1096, 0.410026, -46.9476)
 
 [node name="stones" type="Node3D" parent="."]
 transform = Transform3D(30, 0, 0, 0, 40, 0, 0, 0, 20, 23.825, -1.05206, 46.9817)
@@ -1145,7 +1134,7 @@ shape = SubResource("ConcavePolygonShape3D_18lpn")
 transform = Transform3D(0.33504, 0, 14.9916, 0, 15, 0, -9.99439, 0, 0.50256, 11.4516, -1.31775, 23.1471)
 
 [node name="poles2" type="MeshInstance3D" parent="poles/poles5"]
-transform = Transform3D(1, 0, 7.45058e-09, 0, 1, 0, 1.49012e-08, 0, 1, 1.22403, 0, -0.0273549)
+transform = Transform3D(1, 0, 7.45058e-09, 0, 1, 0, 1.67638e-08, 0, 1, 1.22403, 0, -0.0273548)
 mesh = SubResource("ArrayMesh_smdnu")
 skeleton = NodePath("")
 
@@ -1203,28 +1192,8 @@ theme_override_colors/font_color = Color(0.807843, 0.905882, 0.164706, 1)
 theme_override_font_sizes/font_size = 14
 text = "Coins Remaining : 4"
 
-[node name="up" type="Sprite2D" parent="UserInterface"]
-position = Vector2(372, 557)
-scale = Vector2(4, 4)
-texture = ExtResource("4_0ffjn")
-
-[node name="down" type="Sprite2D" parent="UserInterface"]
-position = Vector2(375, 687)
-rotation = 3.14159
-scale = Vector2(4, 4)
-texture = ExtResource("4_0ffjn")
-
-[node name="right" type="Sprite2D" parent="UserInterface"]
-position = Vector2(440, 622)
-rotation = 1.5708
-scale = Vector2(4, 4)
-texture = ExtResource("4_0ffjn")
-
-[node name="left" type="Sprite2D" parent="UserInterface"]
-position = Vector2(309, 619)
-rotation = -1.5708
-scale = Vector2(4, 4)
-texture = ExtResource("4_0ffjn")
+[node name="directions" parent="UserInterface" instance=ExtResource("6_geist")]
+position = Vector2(1, 0)
 
 [node name="platform_grass" parent="." instance=ExtResource("7_mkt3q")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.7286, -2.22633, -15.4931)
@@ -1233,9 +1202,16 @@ visible = false
 [node name="character" type="Node3D" parent="."]
 
 [node name="Player" parent="character" instance=ExtResource("1_bds27")]
-transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -25.2074, 18.8178, 52.8997)
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -25.2074, 20.8178, 52.8997)
 
 [node name="enemy" type="Node3D" parent="."]
 
 [node name="Beetle" parent="enemy" instance=ExtResource("9_hdpv7")]
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 8.49631, -0.0249867, -25.2609)
+
+[connection signal="glabCoin" from="goldcoin7" to="UserInterface/score" method="_on_goldcoin_7_glab_coin"]
+[connection signal="glabCoin" from="goldcoin9" to="UserInterface/score" method="_on_goldcoin_7_glab_coin"]
+[connection signal="glabCoin" from="goldcoin10" to="UserInterface/score" method="_on_goldcoin_7_glab_coin"]
+[connection signal="glabCoin" from="goldcoin11" to="UserInterface/score" method="_on_goldcoin_7_glab_coin"]
+[connection signal="glabCoin" from="goldcoin12" to="UserInterface/score" method="_on_goldcoin_7_glab_coin"]
+[connection signal="glabCoin" from="goldcoin13" to="UserInterface/score" method="_on_goldcoin_7_glab_coin"]

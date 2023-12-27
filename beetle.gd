@@ -1,7 +1,7 @@
 extends CharacterBody3D
 
 
-const SPEED = 5.0
+const SPEED = 9.0
 var attackPlayer = false
 var chasePlayer = false
 @onready var mesh = get_node("beetle_bot_fused")

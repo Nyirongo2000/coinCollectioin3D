@@ -18,13 +18,17 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 # when player is ready
 func _ready():
 	animation_player.play("Idle")
-	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+#	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 
 # getting mouse motion
 func _input(event):
 	if event is InputEventMouseMotion:
+		
 		rotate_y(deg_to_rad(-event.relative.x * sensing_horizontal_mvmet))
-		camera_mount_node_3d.rotate_x(deg_to_rad(-event.relative.y * sensing_vetical_mvmet))
+		var xRotate = clamp(rotation.x - event.relative.y/1000 * sensing_horizontal_mvmet, -0.25, 0.25)
+		var yRotate = rotation.x - event.relative.y/1000 * sensing_vetical_mvmet
+		camera_mount_node_3d.rotation = Vector3(xRotate,yRotate, 0)
+#		camera_mount_node_3d.rotate_x(deg_to_rad(-event.relative.y * sensing_vetical_mvmet))
 
 func _physics_process(delta):
 	# Get the input direction and handle the movement/deceleration.
