@@ -3,7 +3,7 @@ extends CharacterBody3D
 var is_attacking = false   # Renamed attackPlayer for readability
 var is_chasing = false     # Renamed chasePlayer for consistency
 
-const movement_speed = 2.5 # Renamed SPEED for clarity
+const movement_speed =9 # Renamed SPEED for clarity
 @onready var character_mesh = get_node("beetle_bot_fused")  # Renamed mesh for specificity
 @onready var animation_controller = $beetle_bot_fused/AnimationPlayer # Renamed for consistency
 @onready var agent = $NavigationAgent3D

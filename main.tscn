@@ -1,4 +1,4 @@
-[gd_scene load_steps=86 format=3 uid="uid://ck05c4aum1486"]
+[gd_scene load_steps=87 format=3 uid="uid://ck05c4aum1486"]
 
 [ext_resource type="PackedScene" uid="uid://duakk3s2n4txd" path="res://Environment/Platformer-Kit/Models/doorLargeOpen.glb" id="1_6tgmg"]
 [ext_resource type="PackedScene" uid="uid://dsgo4dshnut54" path="res://player.tscn" id="1_bds27"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://byldn1bgeasoe" path="res://Environment/Nature-Kit/Models/platform_grass.glb" id="7_mkt3q"]
 [ext_resource type="PackedScene" uid="uid://dsgey5rr5r4wh" path="res://Environment/Platformer-Kit/Models/hedge.glb" id="7_nmfco"]
 [ext_resource type="PackedScene" uid="uid://ch3ilxfm54ob6" path="res://beetle.tscn" id="9_hdpv7"]
+[ext_resource type="PackedScene" uid="uid://tuesl68dwgj8" path="res://win_collectable.tscn" id="11_672k5"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_brxs1"]
 sky_top_color = Color(1, 1, 1, 1)
@@ -934,7 +935,7 @@ transform = Transform3D(12, 0, 0, 0, 12, 0, 0, 0, 12, 18.8111, -0.913224, -44.48
 transform = Transform3D(12, 0, 0, 0, 12, 0, 0, 0, 12, 22.2496, 3.10076, -12.7278)
 
 [node name="goldcoin13" parent="." instance=ExtResource("3_265ye")]
-transform = Transform3D(12, 0, 0, 0, 12, 0, 0, 0, 12, 0.0516834, 6.76036, 24.345)
+transform = Transform3D(12, 0, 0, 0, 12, 0, 0, 0, 12, 0.0516834, 0.944135, 24.345)
 
 [node name="goldcoin8" parent="." instance=ExtResource("3_265ye")]
 transform = Transform3D(12, 0, 0, 0, 12, 0, 0, 0, 12, -6.4414, 6.76036, 47.1517)
@@ -1199,7 +1200,7 @@ theme_override_font_sizes/font_size = 14
 text = "Coins Remaining : 4"
 
 [node name="Window" type="Window" parent="UserInterface"]
-title = "complete"
+title = "objective"
 initial_position = 1
 size = Vector2i(350, 150)
 visible = false
@@ -1208,7 +1209,12 @@ popup_window = true
 [node name="Label" type="Label" parent="UserInterface/Window"]
 offset_right = 281.0
 offset_bottom = 26.0
-text = "Get the Heart To Complete the level "
+text = "Get atleast 6 coins , 
+dodge the enemies    
+Get the Heart To Complete the level 
+"
+horizontal_alignment = 1
+autowrap_mode = 3
 
 [node name="platform_grass" parent="." instance=ExtResource("7_mkt3q")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.7286, -2.22633, -15.4931)
@@ -1223,6 +1229,9 @@ transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -25.2074, 20.8178, 52.8997)
 
 [node name="Beetle" parent="enemy" instance=ExtResource("9_hdpv7")]
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 8.49631, -0.0249867, -25.2609)
+
+[node name="win" parent="." instance=ExtResource("11_672k5")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 8.42235)
 
 [connection signal="glabCoin" from="goldcoin7" to="UserInterface/score" method="_on_goldcoin_7_glab_coin"]
 [connection signal="glabCoin" from="goldcoin9" to="UserInterface/score" method="_on_goldcoin_7_glab_coin"]

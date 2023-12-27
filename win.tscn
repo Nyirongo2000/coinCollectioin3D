@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://ccf4h7kljlpuh"]
+[gd_scene load_steps=4 format=3 uid="uid://ccf4h7kljlpuh"]
 
 [ext_resource type="Script" path="res://done.gd" id="1_l7vvt"]
+[ext_resource type="Script" path="res://Main menu.gd" id="2_1r3yx"]
+[ext_resource type="Script" path="res://continue.gd" id="3_e1f3c"]
 
 [node name="win" type="Control"]
 layout_mode = 3
@@ -16,8 +18,30 @@ offset_right = 434.0
 offset_bottom = 312.0
 theme_override_colors/font_color = Color(0.611765, 0.47451, 0.00392157, 1)
 theme_override_font_sizes/font_size = 20
-text = "Get the Heart To Complete the level "
+text = "Congratulations!!!, 
+You Have completed This Level"
 horizontal_alignment = 1
 vertical_alignment = 1
-autowrap_mode = 3
+autowrap_mode = 2
 script = ExtResource("1_l7vvt")
+
+[node name="Main menu" type="Button" parent="."]
+layout_mode = 0
+offset_left = 141.0
+offset_top = 363.0
+offset_right = 350.0
+offset_bottom = 428.0
+text = "Main Menu"
+script = ExtResource("2_1r3yx")
+
+[node name="continue" type="Button" parent="."]
+layout_mode = 0
+offset_left = 143.0
+offset_top = 437.0
+offset_right = 352.0
+offset_bottom = 502.0
+text = "continue"
+script = ExtResource("3_e1f3c")
+
+[connection signal="pressed" from="Main menu" to="Main menu" method="_on_pressed"]
+[connection signal="pressed" from="continue" to="continue" method="_on_pressed"]

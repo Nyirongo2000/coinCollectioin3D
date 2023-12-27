@@ -20,7 +20,7 @@ func _on_goldcoin_7_glab_coin():
 #    if score == min_score:
 #		"$"../coins remaining".remaining_coins = min_score
 	
-	if score == 1:
+	if score == 6:
 		popup.show()
 #		get_tree().change_scene_to_file("res://win.tscn")
 	
