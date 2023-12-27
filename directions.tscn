@@ -7,47 +7,49 @@
 [node name="directions" type="Node2D"]
 script = ExtResource("1_b11oo")
 
-[node name="UPTouchScreenButton" type="TouchScreenButton" parent="."]
+[node name="arrow key control" type="Node" parent="."]
+
+[node name="UPTouchScreenButton" type="TouchScreenButton" parent="arrow key control"]
 position = Vector2(312, 482)
 scale = Vector2(5, 5)
 texture_normal = ExtResource("2_6arsp")
 texture_pressed = ExtResource("2_6arsp")
 
-[node name="DownTouchScreenButton2" type="TouchScreenButton" parent="."]
+[node name="DownTouchScreenButton2" type="TouchScreenButton" parent="arrow key control"]
 position = Vector2(396, 699)
 rotation = 3.14159
 scale = Vector2(5, 5)
 texture_normal = ExtResource("2_6arsp")
 texture_pressed = ExtResource("2_6arsp")
 
-[node name="LeftTouchScreenButton3" type="TouchScreenButton" parent="."]
+[node name="LeftTouchScreenButton3" type="TouchScreenButton" parent="arrow key control"]
 position = Vector2(245, 628)
 rotation = -1.5708
 scale = Vector2(5, 5)
 texture_normal = ExtResource("2_6arsp")
 texture_pressed = ExtResource("2_6arsp")
 
-[node name="RightTouchScreenButton4" type="TouchScreenButton" parent="."]
+[node name="RightTouchScreenButton4" type="TouchScreenButton" parent="arrow key control"]
 position = Vector2(458, 549)
 rotation = 1.5708
 scale = Vector2(5, 5)
 texture_normal = ExtResource("2_6arsp")
 texture_pressed = ExtResource("2_6arsp")
 
-[node name="JumpTouchScreenButton5" type="TouchScreenButton" parent="."]
+[node name="JumpTouchScreenButton5" type="TouchScreenButton" parent="arrow key control"]
 position = Vector2(398, 547)
 rotation = 1.5708
 scale = Vector2(2.52527, 2.52527)
 texture_normal = ExtResource("3_uj2l4")
 texture_pressed = ExtResource("3_uj2l4")
 
-[connection signal="pressed" from="UPTouchScreenButton" to="." method="_on_up_touch_screen_button_pressed"]
-[connection signal="released" from="UPTouchScreenButton" to="." method="_on_up_touch_screen_button_released"]
-[connection signal="pressed" from="DownTouchScreenButton2" to="." method="_on_down_touch_screen_button_2_pressed"]
-[connection signal="released" from="DownTouchScreenButton2" to="." method="_on_down_touch_screen_button_2_released"]
-[connection signal="pressed" from="LeftTouchScreenButton3" to="." method="_on_left_touch_screen_button_3_pressed"]
-[connection signal="released" from="LeftTouchScreenButton3" to="." method="_on_left_touch_screen_button_3_released"]
-[connection signal="pressed" from="RightTouchScreenButton4" to="." method="_on_right_touch_screen_button_4_pressed"]
-[connection signal="released" from="RightTouchScreenButton4" to="." method="_on_right_touch_screen_button_4_released"]
-[connection signal="pressed" from="JumpTouchScreenButton5" to="." method="_on_jump_touch_screen_button_5_pressed"]
-[connection signal="released" from="JumpTouchScreenButton5" to="." method="_on_jump_touch_screen_button_5_released"]
+[connection signal="pressed" from="arrow key control/UPTouchScreenButton" to="." method="_on_up_touch_screen_button_pressed"]
+[connection signal="released" from="arrow key control/UPTouchScreenButton" to="." method="_on_up_touch_screen_button_released"]
+[connection signal="pressed" from="arrow key control/DownTouchScreenButton2" to="." method="_on_down_touch_screen_button_2_pressed"]
+[connection signal="released" from="arrow key control/DownTouchScreenButton2" to="." method="_on_down_touch_screen_button_2_released"]
+[connection signal="pressed" from="arrow key control/LeftTouchScreenButton3" to="." method="_on_left_touch_screen_button_3_pressed"]
+[connection signal="released" from="arrow key control/LeftTouchScreenButton3" to="." method="_on_left_touch_screen_button_3_released"]
+[connection signal="pressed" from="arrow key control/RightTouchScreenButton4" to="." method="_on_right_touch_screen_button_4_pressed"]
+[connection signal="released" from="arrow key control/RightTouchScreenButton4" to="." method="_on_right_touch_screen_button_4_released"]
+[connection signal="pressed" from="arrow key control/JumpTouchScreenButton5" to="." method="_on_jump_touch_screen_button_5_pressed"]
+[connection signal="released" from="arrow key control/JumpTouchScreenButton5" to="." method="_on_jump_touch_screen_button_5_released"]

@@ -1,10 +1,11 @@
-[gd_scene load_steps=85 format=3 uid="uid://ck05c4aum1486"]
+[gd_scene load_steps=86 format=3 uid="uid://ck05c4aum1486"]
 
 [ext_resource type="PackedScene" uid="uid://duakk3s2n4txd" path="res://Environment/Platformer-Kit/Models/doorLargeOpen.glb" id="1_6tgmg"]
 [ext_resource type="PackedScene" uid="uid://dsgo4dshnut54" path="res://player.tscn" id="1_bds27"]
 [ext_resource type="PackedScene" uid="uid://bb58kj25dl4dg" path="res://Environment/Platformer-Kit/Models/doorLargeClosed.glb" id="2_36uw8"]
 [ext_resource type="PackedScene" uid="uid://d025jbhpltpi7" path="res://goldcoin.tscn" id="3_265ye"]
 [ext_resource type="Script" path="res://Label.gd" id="3_bq43h"]
+[ext_resource type="Script" path="res://coins remaining.gd" id="6_8ofm1"]
 [ext_resource type="PackedScene" uid="uid://djh57b1ik4xva" path="res://directions.tscn" id="6_geist"]
 [ext_resource type="PackedScene" uid="uid://byldn1bgeasoe" path="res://Environment/Nature-Kit/Models/platform_grass.glb" id="7_mkt3q"]
 [ext_resource type="PackedScene" uid="uid://dsgey5rr5r4wh" path="res://Environment/Platformer-Kit/Models/hedge.glb" id="7_nmfco"]
@@ -948,6 +949,7 @@ skeleton = NodePath("")
 [node name="StaticBody3D" type="StaticBody3D" parent="stones/stones2"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="stones/stones2/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.025, 0)
 shape = SubResource("ConcavePolygonShape3D_4citl")
 
 [node name="hedge" type="Node3D" parent="."]
@@ -1172,7 +1174,7 @@ theme_override_font_sizes/font_size = 30
 text = "Score : 0"
 script = ExtResource("3_bq43h")
 
-[node name="coins collected" type="Label" parent="UserInterface"]
+[node name="coins remaining" type="Label" parent="UserInterface"]
 layout_mode = 0
 offset_left = 5.0
 offset_top = 63.0
@@ -1181,6 +1183,10 @@ offset_bottom = 89.0
 theme_override_colors/font_color = Color(0.807843, 0.905882, 0.164706, 1)
 theme_override_font_sizes/font_size = 14
 text = "Coins Collected : 2"
+script = ExtResource("6_8ofm1")
+
+[node name="directions" parent="UserInterface" instance=ExtResource("6_geist")]
+position = Vector2(1, 0)
 
 [node name="coins collected2" type="Label" parent="UserInterface"]
 layout_mode = 0
@@ -1192,8 +1198,17 @@ theme_override_colors/font_color = Color(0.807843, 0.905882, 0.164706, 1)
 theme_override_font_sizes/font_size = 14
 text = "Coins Remaining : 4"
 
-[node name="directions" parent="UserInterface" instance=ExtResource("6_geist")]
-position = Vector2(1, 0)
+[node name="Window" type="Window" parent="UserInterface"]
+title = "complete"
+initial_position = 1
+size = Vector2i(350, 150)
+visible = false
+popup_window = true
+
+[node name="Label" type="Label" parent="UserInterface/Window"]
+offset_right = 281.0
+offset_bottom = 26.0
+text = "Get the Heart To Complete the level "
 
 [node name="platform_grass" parent="." instance=ExtResource("7_mkt3q")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.7286, -2.22633, -15.4931)
@@ -1215,3 +1230,4 @@ transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 8.49631, -0.0249867, -25.2609
 [connection signal="glabCoin" from="goldcoin11" to="UserInterface/score" method="_on_goldcoin_7_glab_coin"]
 [connection signal="glabCoin" from="goldcoin12" to="UserInterface/score" method="_on_goldcoin_7_glab_coin"]
 [connection signal="glabCoin" from="goldcoin13" to="UserInterface/score" method="_on_goldcoin_7_glab_coin"]
+[connection signal="close_requested" from="UserInterface/Window" to="UserInterface/score" method="_on_window_close_requested"]

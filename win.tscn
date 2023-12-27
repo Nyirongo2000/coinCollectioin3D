@@ -1,0 +1,23 @@
+[gd_scene load_steps=2 format=3 uid="uid://ccf4h7kljlpuh"]
+
+[ext_resource type="Script" path="res://done.gd" id="1_l7vvt"]
+
+[node name="win" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="done" type="Label" parent="."]
+layout_mode = 0
+offset_left = 52.0
+offset_top = 281.0
+offset_right = 434.0
+offset_bottom = 312.0
+theme_override_colors/font_color = Color(0.611765, 0.47451, 0.00392157, 1)
+theme_override_font_sizes/font_size = 20
+text = "Get the Heart To Complete the level "
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+script = ExtResource("1_l7vvt")
