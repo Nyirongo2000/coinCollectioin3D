@@ -14,14 +14,9 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 var target_direction = Vector2.ZERO  # Renamed direction for clarity
 var randomNG = RandomNumberGenerator.new()
 
-
-# Health variable (unchanged)
-var health
-
-
 func _ready():
 	randomNG.randomize()
-	target_direction = Vector3(randf_range(-45,45), 0, randf_range(-45, 45))
+	target_direction = Vector3(randf_range(-40,40), 0, randf_range(-45, 45))
 	updateTargetLocation(target_direction)
 
 func _physics_process(delta):
@@ -72,12 +67,11 @@ func _handle_idle_state(delta):
 		var direction = (next_location - global_position).normalized()
 		character_mesh.rotation.y = lerp_angle(character_mesh.rotation.y, atan2(direction.x, direction.z), delta * 10)
 		
+
+		
 		velocity.x = direction.x * movement_speed
 		velocity.z = direction.z * movement_speed
 		animation_controller.play("walk")
-		randomNG.randomize()
-		target_direction = Vector3(randf_range(-45, 45), 0, randf_range(-45, 45))
-		updateTargetLocation(target_direction)
 
 	else:
 		randomNG.randomize()
@@ -91,7 +85,8 @@ func updateTargetLocation(targLoc):
 
 func _on_chasing_area_body_entered(body):
 	if "Player" in body.name:
-		is_chasing = false
+#\player chase entered
+		is_chasing = true
 
 
 func _on_attacking_area_body_entered(body):

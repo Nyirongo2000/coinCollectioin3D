@@ -44,3 +44,17 @@ func _on_jump_touch_screen_button_5_pressed():
 	Input.action_press("move_jump")
 func _on_jump_touch_screen_button_5_released():
 	Input.action_release("move_jump")
+
+
+
+
+#camera
+
+
+
+func _on_camera_left_touch_screen_button_pressed():
+	Input.action_press("move_jump")
+
+
+func _on_camera_left_touch_screen_button_released():
+	pass # Replace with function body.

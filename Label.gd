@@ -14,8 +14,8 @@ func _process(delta):
 
 func _on_goldcoin_7_glab_coin():
 	score =score + 1
+	emit_signal("score_changed")  # Emit signal with new score
 	_ready()
-	emit_signal("score_changed", score)  # Emit signal with new score
 #Set remaining coins when score reaches minimum
 #    if score == min_score:
 #		"$"../coins remaining".remaining_coins = min_score
@@ -29,3 +29,4 @@ func _on_goldcoin_7_glab_coin():
 
 func _on_window_close_requested():
 	popup.hide()
+

@@ -12,7 +12,9 @@ func _process(delta):
 	
 func _on_body_entered(body):
 	if body.name == "Player":
+		print("Body entered!")
 		emit_signal("glabCoin")
-	print("Body entered!")
 	queue_free()
 	#ADD A COUNTER on how many coins have been collected
+
+
