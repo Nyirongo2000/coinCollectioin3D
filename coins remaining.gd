@@ -9,5 +9,9 @@ func _ready():
 
 func _on_score_score_changed():
 	print("decremented")
-	remaining_coins -= 1
-	_ready()
+	if remaining_coins > 0:
+		remaining_coins -= 1
+		_ready()
+	elif remaining_coins == 0:
+		remaining_coins = 0
+	

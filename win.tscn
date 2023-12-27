@@ -10,13 +10,20 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
+[node name="ColorRect" type="ColorRect" parent="."]
+custom_minimum_size = Vector2(720, 480)
+layout_mode = 0
+offset_right = 720.0
+offset_bottom = 480.0
+color = Color(0.701961, 0.247059, 0.219608, 1)
+
 [node name="done" type="Label" parent="."]
 layout_mode = 0
-offset_left = 52.0
-offset_top = 281.0
-offset_right = 434.0
-offset_bottom = 312.0
-theme_override_colors/font_color = Color(0.611765, 0.47451, 0.00392157, 1)
+offset_left = 159.0
+offset_top = 85.0
+offset_right = 541.0
+offset_bottom = 147.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 20
 text = "Congratulations!!!, 
 You Have completed This Level"
@@ -27,19 +34,19 @@ script = ExtResource("1_l7vvt")
 
 [node name="Main menu" type="Button" parent="."]
 layout_mode = 0
-offset_left = 141.0
-offset_top = 363.0
-offset_right = 350.0
-offset_bottom = 428.0
+offset_left = 234.0
+offset_top = 215.0
+offset_right = 443.0
+offset_bottom = 280.0
 text = "Main Menu"
 script = ExtResource("2_1r3yx")
 
 [node name="continue" type="Button" parent="."]
 layout_mode = 0
-offset_left = 143.0
-offset_top = 437.0
-offset_right = 352.0
-offset_bottom = 502.0
+offset_left = 237.0
+offset_top = 307.0
+offset_right = 446.0
+offset_bottom = 372.0
 text = "continue"
 script = ExtResource("3_e1f3c")
 

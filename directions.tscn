@@ -1,9 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://djh57b1ik4xva"]
+[gd_scene load_steps=4 format=3 uid="uid://djh57b1ik4xva"]
 
 [ext_resource type="Script" path="res://directions.gd" id="1_b11oo"]
 [ext_resource type="Texture2D" uid="uid://dkajt1yya1mjh" path="res://UI/KennyUIPack/UI Textures/grey_arrowUpWhite.png" id="2_6arsp"]
 [ext_resource type="Texture2D" uid="uid://cdokyuvspijwv" path="res://UI/KennyUIPack/UI Textures/yellow_boxTick.png" id="3_uj2l4"]
-[ext_resource type="Texture2D" uid="uid://ddvh7sk7uy6n7" path="res://3D-Characters/UI Textures/yellow_sliderUp.png" id="4_yvlmj"]
 
 [node name="directions" type="Node2D"]
 script = ExtResource("1_b11oo")
@@ -11,44 +10,38 @@ script = ExtResource("1_b11oo")
 [node name="arrow key control" type="Node" parent="."]
 
 [node name="UPTouchScreenButton" type="TouchScreenButton" parent="arrow key control"]
-position = Vector2(312, 482)
-scale = Vector2(5, 5)
+position = Vector2(580, 290)
+scale = Vector2(4, 4)
 texture_normal = ExtResource("2_6arsp")
 texture_pressed = ExtResource("2_6arsp")
 
 [node name="DownTouchScreenButton2" type="TouchScreenButton" parent="arrow key control"]
-position = Vector2(396, 699)
+position = Vector2(643, 462)
 rotation = 3.14159
-scale = Vector2(5, 5)
+scale = Vector2(4, 4)
 texture_normal = ExtResource("2_6arsp")
 texture_pressed = ExtResource("2_6arsp")
 
 [node name="LeftTouchScreenButton3" type="TouchScreenButton" parent="arrow key control"]
-position = Vector2(245, 628)
+position = Vector2(528, 416)
 rotation = -1.5708
-scale = Vector2(5, 5)
+scale = Vector2(4, 4)
 texture_normal = ExtResource("2_6arsp")
 texture_pressed = ExtResource("2_6arsp")
 
 [node name="RightTouchScreenButton4" type="TouchScreenButton" parent="arrow key control"]
-position = Vector2(458, 549)
+position = Vector2(698, 351)
 rotation = 1.5708
-scale = Vector2(5, 5)
+scale = Vector2(4, 4)
 texture_normal = ExtResource("2_6arsp")
 texture_pressed = ExtResource("2_6arsp")
 
 [node name="JumpTouchScreenButton5" type="TouchScreenButton" parent="arrow key control"]
-position = Vector2(398, 547)
+position = Vector2(645, 345)
 rotation = 1.5708
-scale = Vector2(2.52527, 2.52527)
+scale = Vector2(1.85861, 1.8586)
 texture_normal = ExtResource("3_uj2l4")
 texture_pressed = ExtResource("3_uj2l4")
-
-[node name="camera left TouchScreenButton" type="TouchScreenButton" parent="arrow key control"]
-position = Vector2(24, 499)
-scale = Vector2(2.92857, 1.95238)
-texture_normal = ExtResource("4_yvlmj")
-texture_pressed = ExtResource("4_yvlmj")
 
 [connection signal="pressed" from="arrow key control/UPTouchScreenButton" to="." method="_on_up_touch_screen_button_pressed"]
 [connection signal="released" from="arrow key control/UPTouchScreenButton" to="." method="_on_up_touch_screen_button_released"]
