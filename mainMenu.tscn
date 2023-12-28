@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://c6jd6qojrssch"]
 
-[ext_resource type="Script" path="res://Button.gd" id="1_lw8st"]
+[ext_resource type="Script" path="res://start game.gd" id="1_3qxoj"]
 
 [node name="Main Menu" type="Control"]
 layout_mode = 3
@@ -22,7 +22,7 @@ offset_right = 463.0
 offset_bottom = 337.0
 theme_override_font_sizes/font_size = 30
 text = "start game"
-script = ExtResource("1_lw8st")
+script = ExtResource("1_3qxoj")
 
 [node name="exit_game" type="Button" parent="."]
 layout_mode = 0
@@ -32,7 +32,6 @@ offset_right = 463.0
 offset_bottom = 425.0
 theme_override_font_sizes/font_size = 30
 text = "Quit"
-script = ExtResource("1_lw8st")
 
 [node name="game" type="Label" parent="."]
 layout_mode = 0
@@ -45,4 +44,4 @@ theme_override_font_sizes/font_size = 50
 text = "Main Menu"
 
 [connection signal="pressed" from="start game" to="start game" method="_on_pressed"]
-[connection signal="pressed" from="exit_game" to="exit_game" method="_on_pressed"]
+[connection signal="pressed" from="exit_game" to="start game" method="_on_exit_game_pressed"]

@@ -42,6 +42,7 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_3dco3")
 
 [node name="win" type="Area3D"]
+collision_layer = 8
 script = ExtResource("1_pt1cg")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
