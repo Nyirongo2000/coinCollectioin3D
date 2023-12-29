@@ -7,7 +7,6 @@ const movement_speed =9 # Renamed SPEED for clarity
 @onready var character_mesh = get_node("beetle_bot_fused")  # Renamed mesh for specificity
 @onready var animation_controller = $beetle_bot_fused/AnimationPlayer # Renamed for consistency
 @onready var agent = $NavigationAgent3D
-
 # Get gravity from project settings
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
@@ -104,3 +103,4 @@ func _on_attacking_area_body_exited(body):
 	if "Player" in body.name:
 		is_attacking = false
 		is_chasing = true
+		

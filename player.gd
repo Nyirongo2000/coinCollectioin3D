@@ -11,9 +11,17 @@ var target_velocity = Vector3.ZERO
 @onready var node_3d_pivot_visuals = $Node3D_pivot_visuals
 
 const JUMP_VELOCITY = 9.5
+#health bar
+@onready var texture_progress_bar = $TextureProgressBar
+
+
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
+@export var health = 100
+@export var maxHealth = 100
+#@onready var health_bar = "res://health.tscn"
+
 
 # when player is ready
 func _ready():
@@ -28,11 +36,8 @@ func _input(event):
 		var xRotate = clamp(rotation.x - event.relative.y/1000 * sensing_horizontal_mvmet, -0.25, 0.25)
 		var yRotate = rotation.x - event.relative.y/1000 * sensing_vetical_mvmet
 		camera_mount_node_3d.rotation = Vector3(xRotate,yRotate, 0)
-#		camera_mount_node_3d.rotate_x(deg_to_rad(-event.relative.y * sensing_vetical_mvmet))
 
 func _physics_process(delta):
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
 	var input_dir = Input.get_vector("move_left", "move_right", "move_up", "move_down")
 	var direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	
@@ -55,38 +60,23 @@ func _physics_process(delta):
 #
 	if not is_on_floor() and velocity.y >0:
 		animation_player.play("Jump")
-	#elif is_on_floor() and velocity == Vector3.ZERO:
-		#animation_player.play('Idle')
-		#animation_player.play("Jump")
-		#print("Current Animation:", animation_player.current_animation)
-
-	# Handle falling animation.
-	#if not is_on_floor() and velocity.y < -0.1 and animation_player.current_animation != "Fall":
-		#animation_player.play("Fall")
-		#print("Current Animation:", animation_player.current_animation)
-
-
 		
-	
 	if direction:
-		# walking animation
-#		if animation_player.current_animation != "Walk":
-#			animation_player.play("Walk")
-#			print("Current Animation:", animation_player.current_animation)
-
-		# to rotate the pivot in walking direction respectively
-		# negate direction fix
 		node_3d_pivot_visuals.look_at(position - direction, Vector3.UP)
 		velocity.x = direction.x * SPEED
 		velocity.z = direction.z * SPEED
 	else:
-		# idle animation
-#		if animation_player.current_animation != "Idle":
-#		animation_player.play("Idle")
-#		print("Current Animation:", animation_player.current_animation)
-
-
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.z = move_toward(velocity.z, 0, SPEED)
 
 	move_and_slide()
+
+
+func _on_attaking_health_area_entered(area):
+	if "attackingArea" in area.name : 
+		health = health-5
+		texture_progress_bar.onupdateValue()
+		if health == 0:
+			get_tree().change_scene_to_file("res://game_over.tscn")
+			
+		

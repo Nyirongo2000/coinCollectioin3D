@@ -1220,6 +1220,7 @@ collision_mask = 5
 
 [node name="Beetle4" parent="enemy" instance=ExtResource("9_hdpv7")]
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 46.2806, 39.332, -35.5931)
+visible = false
 collision_mask = 5
 
 [node name="Bat" parent="enemy" instance=ExtResource("6_gbcwj")]

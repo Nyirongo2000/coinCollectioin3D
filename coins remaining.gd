@@ -1,5 +1,5 @@
 extends Label
-
+signal enoughCoins
 var remaining_coins = 6
 
 
@@ -14,4 +14,5 @@ func _on_score_score_changed():
 		_ready()
 	elif remaining_coins == 0:
 		remaining_coins = 0
+		emit_signal("enoughCoins")
 	
