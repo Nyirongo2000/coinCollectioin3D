@@ -4,4 +4,8 @@
 
 [node name="music player" type="AudioStreamPlayer3D"]
 stream = ExtResource("1_g4l1q")
+volume_db = 10.756
+unit_size = 72.52
+max_db = -2.841
+pitch_scale = 4.0
 autoplay = true

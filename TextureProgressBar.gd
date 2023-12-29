@@ -5,7 +5,7 @@ extends TextureProgressBar
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	value = player.health * 100 / player.maxHealth
-	print("health "+str(value))
+#	print("health "+str(value))
 	
 
 

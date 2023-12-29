@@ -2248,11 +2248,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.847722, 0)
 shape = SubResource("CapsuleShape3D_cwddk")
 
 [node name="TextureProgressBar" type="TextureProgressBar" parent="."]
-offset_left = 520.0
-offset_top = 6.0
-offset_right = 710.0
-offset_bottom = 55.0
-value = 50.0
+offset_left = 519.0
+offset_top = 7.0
+offset_right = 709.0
+offset_bottom = 56.0
+value = 10.0
 texture_under = ExtResource("5_ql66i")
 texture_progress = ExtResource("3_vqhrw")
 script = ExtResource("4_0husi")
