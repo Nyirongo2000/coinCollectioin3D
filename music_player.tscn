@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://cg0icsfo3qbyf"]
+
+[ext_resource type="AudioStream" uid="uid://cqtac5wk6522k" path="res://Audio/KennyImpactSounds/Audio/footstep_wood_004.ogg" id="1_g4l1q"]
+
+[node name="music player" type="AudioStreamPlayer3D"]
+stream = ExtResource("1_g4l1q")
+autoplay = true

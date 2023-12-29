@@ -44,7 +44,7 @@ func _physics_process(delta):
 	# Handle Jump.
 	if Input.is_action_just_pressed("move_jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
-		animation_player.play("Jump")
+#		animation_player.play("Jump")
 #	if not is_on_floor() and velocity.y < 0:
 #		animation_player.play('Fall')
 

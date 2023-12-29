@@ -1,8 +1,19 @@
-[gd_scene load_steps=4 format=3 uid="uid://djh57b1ik4xva"]
+[gd_scene load_steps=13 format=3 uid="uid://djh57b1ik4xva"]
 
 [ext_resource type="Script" path="res://directions.gd" id="1_b11oo"]
-[ext_resource type="Texture2D" uid="uid://dkajt1yya1mjh" path="res://UI/KennyUIPack/UI Textures/grey_arrowUpWhite.png" id="2_6arsp"]
-[ext_resource type="Texture2D" uid="uid://cdokyuvspijwv" path="res://UI/KennyUIPack/UI Textures/yellow_boxTick.png" id="3_uj2l4"]
+[ext_resource type="Texture2D" uid="uid://brww4o46cdnmk" path="res://3D-Characters/UI Textures/blue_sliderUp.png" id="2_eec8v"]
+[ext_resource type="Texture2D" uid="uid://dd4t80cbjfyu1" path="res://3D-Characters/UI Textures/green_sliderUp.png" id="3_q0h5e"]
+[ext_resource type="Texture2D" uid="uid://bgc3huruhp5pk" path="res://3D-Characters/UI Textures/blue_sliderDown.png" id="4_op22u"]
+[ext_resource type="Texture2D" uid="uid://db5mjmpofwqe" path="res://3D-Characters/UI Textures/green_sliderDown.png" id="5_k7hx7"]
+[ext_resource type="Texture2D" uid="uid://diau2t0c86sk2" path="res://3D-Characters/UI Textures/blue_sliderLeft.png" id="6_7iupn"]
+[ext_resource type="Texture2D" uid="uid://dgyg0qy5n630m" path="res://3D-Characters/UI Textures/blue_sliderRight.png" id="7_a5p3a"]
+[ext_resource type="Texture2D" uid="uid://cnq6s03ivaf4d" path="res://3D-Characters/UI Textures/green_sliderLeft.png" id="7_r2xmj"]
+[ext_resource type="Texture2D" uid="uid://bh6x887k7eb6o" path="res://3D-Characters/UI Textures/green_sliderRight.png" id="8_qs2sw"]
+[ext_resource type="Texture2D" uid="uid://cvmhgkk6v5580" path="res://3D-Characters/UI Textures/yellow_boxTick.png" id="9_tf2ct"]
+[ext_resource type="Texture2D" uid="uid://dodp821kv4phs" path="res://3D-Characters/UI Textures/yellow_tick.png" id="10_y2msp"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_mefk2"]
+light_mode = 1
 
 [node name="directions" type="Node2D"]
 script = ExtResource("1_b11oo")
@@ -10,38 +21,36 @@ script = ExtResource("1_b11oo")
 [node name="arrow key control" type="Node" parent="."]
 
 [node name="UPTouchScreenButton" type="TouchScreenButton" parent="arrow key control"]
-position = Vector2(580, 290)
-scale = Vector2(4, 4)
-texture_normal = ExtResource("2_6arsp")
-texture_pressed = ExtResource("2_6arsp")
+texture_filter = 2
+material = SubResource("CanvasItemMaterial_mefk2")
+position = Vector2(582, 280)
+scale = Vector2(2.429, 1)
+texture_normal = ExtResource("2_eec8v")
+texture_pressed = ExtResource("3_q0h5e")
 
 [node name="DownTouchScreenButton2" type="TouchScreenButton" parent="arrow key control"]
-position = Vector2(643, 462)
-rotation = 3.14159
-scale = Vector2(4, 4)
-texture_normal = ExtResource("2_6arsp")
-texture_pressed = ExtResource("2_6arsp")
+position = Vector2(579, 412)
+scale = Vector2(2.42857, 1)
+texture_normal = ExtResource("4_op22u")
+texture_pressed = ExtResource("5_k7hx7")
 
 [node name="LeftTouchScreenButton3" type="TouchScreenButton" parent="arrow key control"]
-position = Vector2(528, 416)
-rotation = -1.5708
-scale = Vector2(4, 4)
-texture_normal = ExtResource("2_6arsp")
-texture_pressed = ExtResource("2_6arsp")
+position = Vector2(530, 332)
+scale = Vector2(1, 2.429)
+texture_normal = ExtResource("6_7iupn")
+texture_pressed = ExtResource("7_r2xmj")
 
 [node name="RightTouchScreenButton4" type="TouchScreenButton" parent="arrow key control"]
-position = Vector2(698, 351)
-rotation = 1.5708
-scale = Vector2(4, 4)
-texture_normal = ExtResource("2_6arsp")
-texture_pressed = ExtResource("2_6arsp")
+position = Vector2(662, 331)
+scale = Vector2(1, 2.429)
+texture_normal = ExtResource("7_a5p3a")
+texture_pressed = ExtResource("8_qs2sw")
 
 [node name="JumpTouchScreenButton5" type="TouchScreenButton" parent="arrow key control"]
-position = Vector2(645, 345)
-rotation = 1.5708
-scale = Vector2(1.85861, 1.8586)
-texture_normal = ExtResource("3_uj2l4")
-texture_pressed = ExtResource("3_uj2l4")
+position = Vector2(580, 331)
+scale = Vector2(1.94445, 1.94444)
+texture_normal = ExtResource("9_tf2ct")
+texture_pressed = ExtResource("10_y2msp")
 
 [connection signal="pressed" from="arrow key control/UPTouchScreenButton" to="." method="_on_up_touch_screen_button_pressed"]
 [connection signal="released" from="arrow key control/UPTouchScreenButton" to="." method="_on_up_touch_screen_button_released"]
