@@ -1,10 +1,13 @@
-[gd_scene format=3 uid="uid://cm0m138ihhgp2"]
+[gd_scene load_steps=2 format=3 uid="uid://cm0m138ihhgp2"]
+
+[ext_resource type="Script" path="res://game_over.gd" id="1_yw4og"]
 
 [node name="GameOver" type="Control"]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+script = ExtResource("1_yw4og")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 custom_minimum_size = Vector2(720, 480)
@@ -15,10 +18,29 @@ color = Color(0.701961, 0.247059, 0.219608, 1)
 
 [node name="Game over" type="Label" parent="."]
 layout_mode = 0
-offset_left = 75.0
-offset_top = 171.0
-offset_right = 649.0
-offset_bottom = 311.0
+offset_left = 68.0
+offset_top = 164.0
+offset_right = 642.0
+offset_bottom = 304.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 100
 text = "GAME OVER"
+
+[node name="MAIN MENU" type="Button" parent="."]
+layout_mode = 0
+offset_left = 319.0
+offset_top = 337.0
+offset_right = 417.0
+offset_bottom = 375.0
+text = "Main Menu"
+
+[node name="CONTINUE" type="Button" parent="."]
+layout_mode = 0
+offset_left = 318.0
+offset_top = 285.0
+offset_right = 416.0
+offset_bottom = 323.0
+text = "Restart"
+
+[connection signal="pressed" from="MAIN MENU" to="." method="_on_main_menu_pressed"]
+[connection signal="pressed" from="CONTINUE" to="." method="_on_continue_pressed"]

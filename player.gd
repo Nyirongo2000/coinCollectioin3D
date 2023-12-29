@@ -74,7 +74,7 @@ func _physics_process(delta):
 
 func _on_attaking_health_area_entered(area):
 	if "attackingArea" in area.name : 
-		health = health-5
+		health = health-20
 		texture_progress_bar.onupdateValue()
 		if health == 0:
 			get_tree().change_scene_to_file("res://game_over.tscn")
