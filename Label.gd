@@ -11,7 +11,7 @@ func _process(delta):
 
 func _on_goldcoin_7_glab_coin():
 	score =score + 1
-	emit_signal("score_changed")  # Emit signal with new score
+	emit_signal("score_changed")  
 	_ready()
 	
 	if score == 6:

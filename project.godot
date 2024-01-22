@@ -10,8 +10,8 @@ config_version=5
 
 [application]
 
-config/name="kwacha"
-run/main_scene="res://player.tscn"
+config/name="backyard coin"
+run/main_scene="res://mainMenu.tscn"
 config/features=PackedStringArray("4.1", "Forward Plus")
 config/icon="res://icon.svg"
 

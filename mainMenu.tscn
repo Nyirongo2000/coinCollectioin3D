@@ -16,32 +16,42 @@ color = Color(0.701961, 0.247059, 0.219608, 1)
 
 [node name="start game" type="Button" parent="."]
 layout_mode = 0
-offset_left = 271.0
-offset_top = 269.0
-offset_right = 463.0
-offset_bottom = 337.0
+offset_left = 269.0
+offset_top = 218.0
+offset_right = 461.0
+offset_bottom = 286.0
 theme_override_font_sizes/font_size = 30
 text = "start game"
 script = ExtResource("1_3qxoj")
 
 [node name="exit_game" type="Button" parent="."]
 layout_mode = 0
-offset_left = 271.0
-offset_top = 357.0
-offset_right = 463.0
-offset_bottom = 425.0
+offset_left = 275.0
+offset_top = 376.0
+offset_right = 467.0
+offset_bottom = 444.0
 theme_override_font_sizes/font_size = 30
 text = "Quit"
 
+[node name="Instructions" type="Button" parent="."]
+layout_mode = 0
+offset_left = 273.0
+offset_top = 295.0
+offset_right = 465.0
+offset_bottom = 363.0
+theme_override_font_sizes/font_size = 30
+text = "Instructions"
+
 [node name="game" type="Label" parent="."]
 layout_mode = 0
-offset_left = 232.0
+offset_left = 189.0
 offset_top = 118.0
-offset_right = 505.0
+offset_right = 536.0
 offset_bottom = 190.0
 theme_override_colors/font_color = Color(0.905882, 0.866667, 0.835294, 1)
 theme_override_font_sizes/font_size = 50
-text = "Main Menu"
+text = "Backyard Coin"
 
 [connection signal="pressed" from="start game" to="start game" method="_on_pressed"]
 [connection signal="pressed" from="exit_game" to="start game" method="_on_exit_game_pressed"]
+[connection signal="pressed" from="Instructions" to="start game" method="_on_instructions_pressed"]

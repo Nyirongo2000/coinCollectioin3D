@@ -23,32 +23,32 @@ script = ExtResource("1_b11oo")
 [node name="UPTouchScreenButton" type="TouchScreenButton" parent="arrow key control"]
 texture_filter = 2
 material = SubResource("CanvasItemMaterial_mefk2")
-position = Vector2(582, 280)
-scale = Vector2(2.429, 1)
+position = Vector2(558, 256)
+scale = Vector2(2.96471, 1.28571)
 texture_normal = ExtResource("2_eec8v")
 texture_pressed = ExtResource("3_q0h5e")
 
 [node name="DownTouchScreenButton2" type="TouchScreenButton" parent="arrow key control"]
-position = Vector2(579, 412)
-scale = Vector2(2.42857, 1)
+position = Vector2(555, 394)
+scale = Vector2(2.75, 1.28571)
 texture_normal = ExtResource("4_op22u")
 texture_pressed = ExtResource("5_k7hx7")
 
 [node name="LeftTouchScreenButton3" type="TouchScreenButton" parent="arrow key control"]
-position = Vector2(530, 332)
-scale = Vector2(1, 2.429)
+position = Vector2(495, 314)
+scale = Vector2(1.30769, 2.429)
 texture_normal = ExtResource("6_7iupn")
 texture_pressed = ExtResource("7_r2xmj")
 
 [node name="RightTouchScreenButton4" type="TouchScreenButton" parent="arrow key control"]
-position = Vector2(662, 331)
-scale = Vector2(1, 2.429)
+position = Vector2(656, 313)
+scale = Vector2(1.23077, 2.62255)
 texture_normal = ExtResource("7_a5p3a")
 texture_pressed = ExtResource("8_qs2sw")
 
 [node name="JumpTouchScreenButton5" type="TouchScreenButton" parent="arrow key control"]
-position = Vector2(580, 331)
-scale = Vector2(1.94445, 1.94444)
+position = Vector2(39, 298)
+scale = Vector2(3.19444, 2.94444)
 texture_normal = ExtResource("9_tf2ct")
 texture_pressed = ExtResource("10_y2msp")
 

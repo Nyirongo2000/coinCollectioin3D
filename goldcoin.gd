@@ -1,12 +1,12 @@
 extends Area3D
 signal  glabCoin
 const ROTATION_SPEED = 6
-# Called when the node enters the scene tree for the first time.
+
 func _ready():
-	pass # Replace with function body.
+	pass
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+
 func _process(delta):
 	rotate_y(deg_to_rad(ROTATION_SPEED))
 	
@@ -17,4 +17,6 @@ func _on_body_entered(body):
 	queue_free()
 	#ADD A COUNTER on how many coins have been collected
 
-
+#reference 
+#Godot 4 3D Platformer Lesson #6- Collectable Coin concept 
+#https://www.youtube.com/watch?v=8XygvGbNTA8&t=40s

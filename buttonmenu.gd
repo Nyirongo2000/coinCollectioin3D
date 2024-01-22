@@ -1,4 +1,4 @@
-extends Button
+extends Node2D
 
 
 # Called when the node enters the scene tree for the first time.
@@ -11,13 +11,5 @@ func _process(delta):
 	pass
 
 
-func _on_pressed():
-	get_tree().change_scene_to_file("res://main.tscn")
-
-
-func _on_exit_game_pressed():
-	get_tree().quit()
-
-
-func _on_instructions_pressed():
-	get_tree().change_scene_to_file("res://main.tscn")
+func _on_button_pressed():
+	get_tree().change_scene_to_file("res://mainMenu.tscn")

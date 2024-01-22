@@ -1,11 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://cg0icsfo3qbyf"]
 
-[ext_resource type="AudioStream" uid="uid://cqtac5wk6522k" path="res://Audio/KennyImpactSounds/Audio/footstep_wood_004.ogg" id="1_g4l1q"]
+[ext_resource type="AudioStream" uid="uid://p00vbbmii34g" path="res://Audio/KennyImpactSounds/Audio/Intro Theme.ogg" id="1_gi1ds"]
 
 [node name="music player" type="AudioStreamPlayer3D"]
-stream = ExtResource("1_g4l1q")
-volume_db = 10.756
-unit_size = 72.52
-max_db = -2.841
-pitch_scale = 4.0
+stream = ExtResource("1_gi1ds")
 autoplay = true
