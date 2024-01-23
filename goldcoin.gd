@@ -1,6 +1,8 @@
 extends Area3D
 signal  glabCoin
 const ROTATION_SPEED = 6
+#@onready var coin_collected: AudioStreamPlayer3D  = $coinCollected
+#@onready var coin_colect_sound : AudioStreamPlayer  = $coinColectSound
 
 func _ready():
 	pass
@@ -14,6 +16,9 @@ func _on_body_entered(body):
 	if body.name == "Player":
 		print("Body entered!")
 		emit_signal("glabCoin")
+#		coin_collected.play()
+#		coin_colect_sound.play()
+#		print("coin sound")
 	queue_free()
 	#ADD A COUNTER on how many coins have been collected
 

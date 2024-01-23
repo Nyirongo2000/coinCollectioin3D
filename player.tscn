@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://dsgo4dshnut54"]
+[gd_scene load_steps=27 format=3 uid="uid://dsgo4dshnut54"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_66bp8"]
 [ext_resource type="Texture2D" uid="uid://bt5o0sr6peltq" path="res://3D-Characters/gobot/model/gobot_gobot_diffuse.png" id="2_la8j3"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://d28w5bql3g21l" path="res://3D-Characters/gobot/model/gobot_gobot_normal.png" id="4_hwh1q"]
 [ext_resource type="Texture2D" uid="uid://suok82r3qcfs" path="res://UI/KennyUIPack/UI Textures/blue_button00.png" id="5_ql66i"]
 [ext_resource type="AudioStream" uid="uid://cjn6t7y2p1pn7" path="res://Audio/KennyImpactSounds/Audio/footstep_wood_003.ogg" id="8_hmpnr"]
+[ext_resource type="AudioStream" uid="uid://dm8cgw8i5pnoo" path="res://Audio/KennyImpactSounds/Audio/footstep_concrete_000.ogg" id="9_au8wj"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v8enx"]
 resource_name = "GobotMat"
@@ -2261,5 +2262,9 @@ script = ExtResource("4_0husi")
 [node name="footstep" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("8_hmpnr")
 volume_db = 0.115
+
+[node name="jump" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_au8wj")
+pitch_scale = 0.26
 
 [connection signal="area_entered" from="attakingHealth" to="." method="_on_attaking_health_area_entered"]
