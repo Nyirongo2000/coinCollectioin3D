@@ -8,6 +8,8 @@ extends CharacterBody3D
 var target_velocity = Vector3.ZERO
 @onready var node_3d_pivot_visuals = $Node3D_pivot_visuals
 @onready var texture_progress_bar = $TextureProgressBar
+@onready var footstep : AudioStreamPlayer = $footstep
+var step_count = 0
 const JUMP_VELOCITY = 9.5
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 @export var health = 100
@@ -38,9 +40,14 @@ func _physics_process(delta):
 
 	if Input.is_action_just_pressed("move_jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
-
+	
 	if is_on_floor() and direction:
 		animation_player.play("Walk")
+#		footstep sound
+		step_count += 1
+		if step_count % 20 == 0:
+			footstep.pitch_scale =  randfn(1.2, 0.1)
+			footstep.play()
 	else:
 		animation_player.play("Idle")
 #
@@ -51,9 +58,11 @@ func _physics_process(delta):
 		node_3d_pivot_visuals.look_at(position - direction, Vector3.UP)
 		velocity.x = direction.x * SPEED
 		velocity.z = direction.z * SPEED
+		
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.z = move_toward(velocity.z, 0, SPEED)
+		
 
 	move_and_slide()
 
